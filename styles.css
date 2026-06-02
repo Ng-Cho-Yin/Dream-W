@@ -456,7 +456,7 @@ h2 {
 #how {
   position: relative;
   background-image:
-    linear-gradient(rgba(10, 20, 35, 0.74), rgba(10, 20, 35, 0.74)),
+    linear-gradient(rgba(10, 20, 35, 0.55), rgba(10, 20, 35, 0.55)),
     url("playing.jpg");
   background-size: cover;
   background-position: center;
@@ -468,9 +468,16 @@ h2 {
 
 #how .tree {
   padding: 38px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.93);
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+#how .tree-node,
+#how .leaves li {
+  background: rgba(255, 255, 255, 0.85);
 }
 
 /* Insights / citations */
@@ -514,6 +521,11 @@ h2 {
 
 /* Contact */
 .contact {
+  display: grid;
+  gap: 44px;
+}
+
+.contact-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -521,12 +533,66 @@ h2 {
   flex-wrap: wrap;
 }
 
-.contact div {
+.contact-row > div {
   max-width: 52ch;
 }
 
 .contact h2 {
-  margin-bottom: 12px;
+  margin-bottom: 0;
+}
+
+.lead {
+  max-width: 60ch;
+  margin-bottom: 44px;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.offices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+
+.office {
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.office-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.office-addr {
+  margin-bottom: 6px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.office-tel {
+  margin: 0;
+}
+
+.office-tel a {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.office-tel a:hover {
+  color: var(--primary);
 }
 
 /* Footer */
@@ -551,7 +617,8 @@ h2 {
   .grid,
   .quote-grid,
   .model-row,
-  .spec-row {
+  .spec-row,
+  .offices {
     grid-template-columns: 1fr;
   }
 
