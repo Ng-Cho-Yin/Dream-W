@@ -557,10 +557,28 @@ h2 {
 }
 
 .office {
-  padding: 26px 28px;
+  overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--bg);
+}
+
+.office-map {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-alt);
+}
+
+.office-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.15);
+}
+
+.office-body {
+  padding: 22px 26px 24px;
 }
 
 .office-tag {
@@ -583,7 +601,7 @@ h2 {
 }
 
 .office-tel {
-  margin: 0;
+  margin: 0 0 12px;
 }
 
 .office-tel a {
@@ -593,6 +611,18 @@ h2 {
 
 .office-tel a:hover {
   color: var(--primary);
+}
+
+.office-link {
+  display: inline-block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.office-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Footer */
