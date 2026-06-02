@@ -224,7 +224,7 @@ p {
 }
 
 .section.alt .section-head,
-.section.alt .steps {
+.section.alt .tree {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
@@ -244,7 +244,7 @@ h2 {
 
 .section p,
 .card p,
-.steps p {
+.leaves li {
   color: var(--muted);
 }
 
@@ -278,29 +278,141 @@ h2 {
   letter-spacing: -0.01em;
 }
 
-/* Steps */
-.steps {
+/* Tree diagram */
+.tree {
+  width: 100%;
+}
+
+.tree-root-row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.tree-root-row::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 2px;
+  height: 30px;
+  background: var(--border);
+  transform: translateX(-50%);
+}
+
+.tree-root {
+  padding: 13px 24px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.branches {
+  display: flex;
+}
+
+.branch {
+  position: relative;
+  flex: 1;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.branch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  background: var(--border);
+  transform: translateX(-50%);
+}
+
+.branch::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+}
+
+.branch:first-child::after {
+  left: 50%;
+  width: 50%;
+}
+
+.branch:last-child::after {
+  width: 50%;
+}
+
+.tree-node {
+  display: inline-block;
+  padding: 11px 22px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg);
+  font-weight: 700;
+}
+
+.leaves {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin: 0;
+  gap: 9px;
+  justify-items: center;
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
-  counter-reset: step;
 }
 
-.steps li {
+.leaves li {
+  padding: 7px 15px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Insights / citations */
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.quote {
+  margin: 0;
+  padding: 36px 34px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg);
+}
+
+.quote blockquote {
   position: relative;
-  padding-top: 26px;
-  border-top: 2px solid var(--primary);
+  margin: 0 0 18px;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent);
+  font-size: 1.28rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--text);
 }
 
-.steps span {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text);
+.quote figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.quote figcaption a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Contact */
@@ -340,8 +452,26 @@ h2 {
 /* Responsive */
 @media (max-width: 860px) {
   .grid,
-  .steps {
+  .quote-grid {
     grid-template-columns: 1fr;
+  }
+
+  .branches {
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .branch {
+    padding-top: 0;
+  }
+
+  .branch::before,
+  .branch::after {
+    display: none;
+  }
+
+  .tree-root-row {
+    padding-bottom: 22px;
   }
 
   .hero {
