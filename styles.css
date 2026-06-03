@@ -150,8 +150,8 @@ p {
 .hero-bear {
   position: absolute;
   z-index: 1;
-  right: max(20px, calc((100vw - 1140px) / 2));
-  bottom: -18px;
+  right: max(80px, calc((100vw - 1140px) / 2 + 60px));
+  bottom: 60px;
   height: clamp(280px, 36.4vw, 494px);
   width: auto;
   filter: drop-shadow(0 34px 46px rgba(0, 0, 0, 0.36));
@@ -1126,8 +1126,8 @@ h2 {
   }
 
   .hero-bear {
-    right: -20px;
-    bottom: -20px;
+    right: 20px;
+    bottom: 40px;
     height: 280px;
   }
 
@@ -1163,7 +1163,8 @@ h2 {
   }
 
   .hero-bear {
-    right: -30px;
+    right: 10px;
+    bottom: 30px;
     height: 234px;
   }
 
