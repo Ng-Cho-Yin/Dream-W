@@ -248,7 +248,8 @@ p {
 .section.alt .section-head,
 .section.alt .how-hero,
 .section.alt .tree,
-.section.alt .demo-panel {
+.section.alt .demo-panel,
+.section.alt .subscribe-inner {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
@@ -993,6 +994,70 @@ h2 {
 .office-link:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* Subscribe */
+.subscribe-inner {
+  max-width: 640px;
+}
+
+.subscribe-inner h2 {
+  max-width: 28ch;
+  margin-bottom: 28px;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.subscribe-form input[type="email"]:focus {
+  outline: 2px solid rgba(15, 61, 99, 0.25);
+  outline-offset: 1px;
+  border-color: var(--primary);
+}
+
+.subscribe-form .button {
+  flex-shrink: 0;
+}
+
+.subscribe-disclaimer {
+  margin: 18px 0 0;
+  max-width: 62ch;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.subscribe-disclaimer a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Footer */
