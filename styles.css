@@ -152,7 +152,7 @@ p {
   z-index: 1;
   right: max(20px, calc((100vw - 1140px) / 2));
   bottom: -18px;
-  height: clamp(430px, 56vw, 760px);
+  height: clamp(280px, 36.4vw, 494px);
   width: auto;
   filter: drop-shadow(0 34px 46px rgba(0, 0, 0, 0.36));
   pointer-events: none;
@@ -1126,10 +1126,9 @@ h2 {
   }
 
   .hero-bear {
-    right: -90px;
+    right: -20px;
     bottom: -20px;
-    height: 430px;
-    opacity: 0.68;
+    height: 280px;
   }
 
   .demo-panel {
@@ -1164,9 +1163,8 @@ h2 {
   }
 
   .hero-bear {
-    right: -130px;
-    height: 360px;
-    opacity: 0.42;
+    right: -30px;
+    height: 234px;
   }
 
   .device-stage {
