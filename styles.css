@@ -66,15 +66,12 @@ p {
   letter-spacing: -0.01em;
 }
 
-.logo-mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border-radius: 9px;
-  color: #ffffff;
-  font-weight: 700;
-  background: var(--primary);
+.logo-img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .nav-links {
