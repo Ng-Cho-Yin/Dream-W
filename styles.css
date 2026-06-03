@@ -278,6 +278,35 @@ h2 {
   letter-spacing: -0.01em;
 }
 
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.product-item {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg);
+}
+
+.product-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.product-item figcaption {
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
 /* Tree diagram */
 .tree {
   width: 100%;
@@ -648,7 +677,8 @@ h2 {
   .quote-grid,
   .model-row,
   .spec-row,
-  .offices {
+  .offices,
+  .product-gallery {
     grid-template-columns: 1fr;
   }
 
